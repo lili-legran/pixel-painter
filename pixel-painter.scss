@@ -1,0 +1,101 @@
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin margin {
+  margin: 30px 0;
+}
+
+@mixin padding {
+  padding: 0 30px;
+}
+
+@mixin tools-sizes {
+  padding: 10px 0;
+  width: 130px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  min-height: 30px;
+  text-align: center;
+  outline: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Indie Flower', cursive;
+  @include flex;
+  flex-direction: column;
+  background: #000;
+  height: 100vh;
+}
+
+h1 {
+  @include margin;
+  font-size: 4em;
+  color: #fff;
+  height: 7vh;
+}
+
+.painter {
+  @include flex;
+  @include margin;
+  align-items: flex-start;
+  width: 100%;
+  &__tools {
+    @include flex;
+    @include margin;
+    flex-direction: column;
+    width: 15%;
+    height: 60vh;
+    color: red;
+    font-size: 1.5em;
+    p {
+      text-align: center;
+    }
+    &_input {
+      @include tools-sizes;
+    }
+    &_button {
+      @include tools-sizes;
+      background: red;
+      color: #fff;
+      font-family: 'Indie Flower', cursive;
+      font-size: .9em;
+      transition: all .5s;
+      &:hover {
+        box-shadow: 0 0 10px 1px red;
+      }
+    }
+    &_eraser {
+      background: #ce2fa5;
+      margin-top: 100px;
+    }
+  }
+  &__desktop {
+    background: #fff;
+    width: 80%;
+    height: 75vh;
+    box-shadow: 0 0 50px 10px #a0a0a0;
+    &_row {
+      display: flex;
+    }
+  }
+  &__about-me {
+    width: 100%;
+    background: #353535;
+    text-align: center;
+    padding: 10px 0;
+    &_link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5em;
+    }
+  }
+}
