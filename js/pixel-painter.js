@@ -24,14 +24,14 @@ const setDesktop = () => {
     for (let j = 0; j < columns; j++) {
       let point = document.createElement('div');
       desktopRow.appendChild(point);
-      point.style.width = size + 'px';
-      point.style.height = size + 'px';
+      point.style.width = `${size}px`;
+      point.style.height = `${size}px`;
       point.addEventListener('mouseenter', function() {
         if(draw === true) {
           if (eraser === true) {
             point.style.background = '#fff';
           } else {
-            point.style.background = '#' + color;
+            point.style.background = `#${color}`;
           }
         }
       });
